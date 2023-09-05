@@ -1,7 +1,6 @@
 #### MAZE PROJECT
 
-For my final foundations project, I did and submitted this. It is a 3D maze raycasting game developed
-with SDL2 library and C.
+For my final ALX Software Engineering foundations project, I did and submitted this. It is a 3D maze raycasting game developed with SDL2 library and C.
 
 #### TECHNOLOGY STACK
 - SDL2 Library (To display graphics in the window)
@@ -53,6 +52,6 @@ For debian based linux os  sudo apt-get install libsdl2-dev
 - Use up and down arrow keys to move farward and back
 - Use right and left arrow keys to turn the camera around
 
-#### AUTHORS
+#### AUTHOR
 
 - Joseph Otine - joeotine@gmail.com
