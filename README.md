@@ -11,27 +11,27 @@ with SDL2 library and C.
 #### PROJECT STRUCTURE
 
 ```
-├── README.md
-|── Makefile
-├── src
-│ ├── graphics.c
-│ ├── textures.c
-│ ├── ray.c
-│ ├── player.c
-│ ├── main.c
-│ ├── wall.c
-│ ├── sprite.c
-│ ├── map.c
-│ └── upng.c
-└── headers
-├── graphics.h
-├── textures.h
-├── ray.h
-├── player.h
-├── wall.h
-├── sprite.h
-├── upng.h
-└── map.h
+ ├── README.md
+ |── Makefile
+ ├── src
+ │   ├── graphics.c         
+ |   ├── textures.c  
+ |   |── ray.c  
+ |   ├── player.c  
+ |   ├── main.c  
+ │   ├── wall.c
+ │   ├── sprite.c 
+ │   ├── map.c 
+ │   └── upng.c
+ └── headers
+     ├── graphics.h
+     ├── textures.h
+     ├── ray.h
+     ├── player.h
+     ├── wall.h
+     ├── sprite.h
+     ├── upng.h
+     ├── map.h
 ```
 
 #### DEVELOPMENT SETUP
