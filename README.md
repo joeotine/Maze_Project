@@ -40,11 +40,11 @@ For debian based linux os  sudo apt-get install libsdl2-dev
 
 #### COMPILATION
 
-<make/>
+`make`
 
 #### EXECUTION
 
-<./make/>
+`./make`
 
 #### USAGE
 
@@ -53,4 +53,4 @@ For debian based linux os  sudo apt-get install libsdl2-dev
 
 #### AUTHORS
 
-- Joseph Otine - joeotine@gmail.com "https://www.twitter.com/joeotine"
+- Joseph Otine - joeotine@gmail.com
