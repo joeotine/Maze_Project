@@ -51,6 +51,6 @@ For debian based linux os  sudo apt-get install libsdl2-dev
 - Use up and down arrow keys to move farward and back
 - Use right and left arrow keys to turn the camera around
 
-#### AUTHOR
+#### AUTHORS
 
 - Joseph Otine - joeotine@gmail.com "https://www.twitter.com/joeotine"
