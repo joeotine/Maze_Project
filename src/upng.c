@@ -1021,9 +1021,6 @@ upng_error upng_decode(upng_t* upng)
 			return upng->error;
 		}
 
-		/* get pointer to payload */
-		data = chunk + 8;
-
 		/* parse chunks */
 		if (upng_chunk_type(chunk) == CHUNK_IDAT) {
 			compressed_size += length;
