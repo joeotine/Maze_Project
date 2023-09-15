@@ -1,8 +1,6 @@
 build:
-	gcc -Wall -Werror -Wextra -pedantic ./src/*.c -lm -o maze `sdl2-config --cflags` `sdl2-config --libs`;
-
+	gcc -std=c99 ./src/*.c -lSDL2 -lm -o main
 run:
-	./maze;
-
-clean:
-	rm maze;
+	./main
+clear:
+	rm main
