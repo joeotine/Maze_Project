@@ -1,94 +1,94 @@
-#include "../headers/map.h"
+#include "../headers/header.h"
 
 static const int map[MAP_NUM_ROWS][MAP_NUM_COLS] = {
-    {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ,1, 1, 1, 1, 1, 1, 1},
-    {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1},
-    {1, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 0, 0, 0, 1},
-    {1, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
-    {1, 0, 0, 0, 2, 2, 0, 3, 0, 4, 0, 5, 0, 6, 0, 0, 0, 0, 0, 1},
-    {1, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
-    {1, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
-    {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 1},
-    {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5},
-    {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 5},
-    {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 5},
-    {1, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 5},
-    {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 5, 5, 5, 5, 5, 5}
+	{6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6},
+	{6, 0, 0, 0, 6, 0, 0, 0, 0, 0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 6},
+	{6, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 6, 0, 0, 0, 6, 0, 0, 0, 6},
+	{6, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 6, 0, 7, 7, 0, 0, 0, 0, 6},
+	{6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 0, 0, 0, 0, 0, 7, 0, 6},
+	{6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 0, 6},
+	{6, 0, 0, 0, 0, 0, 7, 7, 7, 0, 0, 1, 0, 0, 0, 0, 7, 7, 0, 6},
+	{6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6},
+	{6, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 1, 0, 6},
+	{6, 0, 0, 1, 0, 1, 1, 1, 0, 0, 0, 0, 7, 0, 0, 0, 0, 1, 0, 6},
+	{6, 0, 0, 6, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6},
+	{6, 0, 0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6},
+	{6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6}
 };
 
 /**
- * has_wall - function to check if there's a wall in a given point
- * 
- * @x: x-position
- * @y: y-position
- * 
- * Return: true if there is a wall 
- */
-bool has_wall(float x, float y)
+ * DetectCollision - Checks if there could be a collision
+ * with the wall in the next player advance
+ * @x: next x coordinate
+ * @y: next y coordinate
+ * Return: true if collision is detected, false otherwise
+*/
+
+bool DetectCollision(float x, float y)
 {
-	if (x < 0 || x >= MAP_NUM_COLS * TILE_SIZE || y < 0 || y >= MAP_NUM_ROWS * TILE_SIZE)
-	{
+	int mapGridX, mapGridY;
+
+	if (x < 0 || x >= MAP_NUM_COLS * TILE_SIZE ||
+			y < 0 || y >= MAP_NUM_ROWS * TILE_SIZE)
 		return (true);
-	}
-	int map_index_x = floor(x / TILE_SIZE);
-	int map_index_y = floor(y / TILE_SIZE);
-	
-	if (map[map_index_y][map_index_x] != 0)
-		return (true);
-	return (false);
+
+	mapGridX = floor(x / TILE_SIZE);
+	mapGridY = floor(y / TILE_SIZE);
+	return (map[mapGridY][mapGridX] != 0);
 }
 
 /**
- * is_inside_map - function that checks if the given points are inside a map
- * 
- * @x: 
- * @y: 
- * Return: if location is inside a map return true else false.
- */
+ * isInsideMap - check if we continue within the map
+ * @x: next x coordinate
+ * @y: next y coordinate
+ * @Return: true if it is within the map, false otherwise
+*/
 
-bool is_inside_map(float x, float y)
+bool isInsideMap(float x, float y)
 {
-    if (x >= 0 && x <= MAP_NUM_COLS * TILE_SIZE && y >= 0 && y <= MAP_NUM_ROWS * TILE_SIZE)
-    {
-        return (true);
-    }
-    return (false);
+	return (x >= 0 && x <= MAP_NUM_COLS * TILE_SIZE &&
+				y >= 0 && y <= MAP_NUM_ROWS * TILE_SIZE);
 }
 
 /**
- * get_map_at_pos - function that return the map grid index of a given point.
- * 
- * @i: value-1 
- * @j: value-2 
- * Return: map index.
- */
-int get_map_at_pos(int i, int j)
+ * getMapValue - check if we continue within the map
+ * @row: map row to check
+ * @col: map column to check
+ * @Return: The position value in the map
+*/
+
+int getMapValue(int row, int col)
 {
-    return map[i][j];
+
+	return (map[row][col]);
+
 }
 
 /**
- * render_map_grid - function which renders the 2d map grid.
- * 
- * Return: void.
- */
-void render_map_grid()
+ * renderMap - render the map
+ *
+*/
+
+void renderMap(void)
 {
-    int tile_x, tile_y;
-	for (int i = 0; i < MAP_NUM_ROWS; i++)
+	int i, j, tileX, tileY;
+	color_t tileColor;
+
+	for (i = 0; i < MAP_NUM_ROWS; i++)
 	{
-		for (int j = 0; j < MAP_NUM_COLS; j++)
+		for (j = 0; j < MAP_NUM_COLS; j++)
 		{
-			tile_x = j * TILE_SIZE;
-			tile_y = i * TILE_SIZE;
-			u_int32_t tile_color = map[i][j] != 0 ? 0xFFFFFFFF : 0xFF000000;
-			draw_rect(
-                tile_x * MINIMAP_SCALE_FACTOR,
-                tile_y * MINIMAP_SCALE_FACTOR,
-                TILE_SIZE * MINIMAP_SCALE_FACTOR,
-                TILE_SIZE * MINIMAP_SCALE_FACTOR,
-                tile_color
-            );
-        }
+			tileX = j * TILE_SIZE;
+			tileY = i * TILE_SIZE;
+			tileColor = map[i][j] != 0 ? 0xFFFFFFFF : 0x00000000;
+
+			drawRect(
+				tileX * MINIMAP_SCALE_FACTOR,
+				tileY * MINIMAP_SCALE_FACTOR,
+				TILE_SIZE * MINIMAP_SCALE_FACTOR,
+				TILE_SIZE * MINIMAP_SCALE_FACTOR,
+				tileColor
+			);
+		}
 	}
 }

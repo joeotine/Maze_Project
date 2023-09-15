@@ -1,7 +1,15 @@
 #### MAZE PROJECT
 
-For my final ALX Software Engineering foundations project, I did and submitted this. It is a 3D maze raycasting game developed with SDL2 library and C.
+This is my final ALX Software Engineering foundations project.
 
+It is a 3D maze raycasting game developed with SDL2 library and C.
+
+Simple DirectMedia Layer (SDL) is a cross-platform development library designed to provide low level access to audio, keyboard, mouse, joystick, and graphics hardware via OpenGL and Direct3D. It is used by video playback software, emulators, and popular games including Valve's award winning catalog and many Humble Bundle games
+
+#### INSTALLATION
+```sh
+$ git clone https://github.com/joeotine/Maze_Project.git
+```
 #### TECHNOLOGY STACK
 - SDL2 Library (To display graphics in the window)
 - C Programming Language
@@ -33,11 +41,13 @@ For my final ALX Software Engineering foundations project, I did and submitted t
      ├── map.h
 ```
 
+#### FLOWCHART
+
+![The Maze Flow Chart](https://imgur.com/GRM5v9E)
+
 #### DEVELOPMENT SETUP
 
-- https://lazyfoo.net/tutorials/SDL/01_hello_SDL/linux/index.php
-
-For debian based linux os  sudo apt-get install libsdl2-dev
+- For debian based linux os  sudo apt-get install libsdl2-dev
 
 #### COMPILATION
 
@@ -49,8 +59,8 @@ For debian based linux os  sudo apt-get install libsdl2-dev
 
 #### USAGE
 
-- Use up and down arrow keys to move farward and back
-- Use right and left arrow keys to turn the camera around
+- Use up and down arrow keys to move farward and back (keys W and S perform the same function)
+- Use right and left arrow keys to turn the camera around (keys A and D perform the same function) 
 
 #### AUTHOR
 
