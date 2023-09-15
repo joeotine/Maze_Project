@@ -1000,7 +1000,7 @@ upng_error upng_decode(upng_t* upng)
 	 * verify general well-formed-ness */
 	while (chunk < upng->source.buffer + upng->source.size) {
 		unsigned long length;
-		const unsigned char *data;	/*the data in the chunk */
+		/*the data in the chunk */
 
 		/* make sure chunk header is not larger than the total compressed */
 		if ((unsigned long)(chunk - upng->source.buffer + 12) > upng->source.size) {
