@@ -51,7 +51,7 @@ $ git clone https://github.com/joeotine/Maze_Project.git
 
 #### COMPILATION
 
-`make run`
+`make`
 
 #### EXECUTION
 
@@ -64,5 +64,4 @@ $ git clone https://github.com/joeotine/Maze_Project.git
 
 #### AUTHOR
 
-- Joseph Otine
-- joeotine@gmail.com
+- Joseph Otine - joeotine@gmail.com
