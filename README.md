@@ -43,7 +43,7 @@ $ git clone https://github.com/joeotine/Maze_Project.git
 
 #### FLOWCHART
 
-![The Maze Flow Chart](https://imgur.com/GRM5v9E)
+![The Maze Flow Chart](https://i.imgur.com/GRM5v9E.png)
 
 #### DEVELOPMENT SETUP
 
@@ -51,11 +51,11 @@ $ git clone https://github.com/joeotine/Maze_Project.git
 
 #### COMPILATION
 
-`make`
+`make run`
 
 #### EXECUTION
 
-`./make`
+`./maze`
 
 #### USAGE
 
@@ -64,4 +64,5 @@ $ git clone https://github.com/joeotine/Maze_Project.git
 
 #### AUTHOR
 
-- Joseph Otine - joeotine@gmail.com
+- Joseph Otine
+- joeotine@gmail.com
