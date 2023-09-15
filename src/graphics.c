@@ -12,6 +12,9 @@ static SDL_Texture *color_buffer_texture;
  */
 bool initialize_window(void)
 {
+	int full_screen_width;
+	int full_screen_height;
+
 	if (SDL_Init(SDL_INIT_EVERYTHING) != 0)
 	{
 		fprintf(stderr, "Error initializng SDL\n");
